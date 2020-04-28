@@ -31,13 +31,13 @@ public class ImageCardViewPresenter extends Presenter {
 
     private final Context mContext;
 
-    private Radio mSingleton;
+    private Radio mRadio;
     private RadioFragment mFragment;
 
     private ImageCardViewPresenter(Context context, int cardThemeResId, RadioFragment fragment) {
 
         mContext = new ContextThemeWrapper(context, cardThemeResId);
-        mSingleton = Radio.getInstance(getContext());
+        mRadio = Radio.getInstance(getContext());
 
         mFragment = fragment;
     }
@@ -106,7 +106,7 @@ public class ImageCardViewPresenter extends Presenter {
                     getContext().startActivity(intent);
                     break;
                 case EXIT_ITEM:
-                    mSingleton.closePlayer();
+                    mRadio.closePlayer();
                     android.os.Process.killProcess(android.os.Process.myPid());
                     break;
             }
@@ -207,7 +207,7 @@ public class ImageCardViewPresenter extends Presenter {
             });
         }
 
-        if (mSingleton.getStreamUrl().equals(card.getStream())) {
+        if (mRadio.getStreamUrl().equals(card.getStream())) {
             cardView.setContentText(getContext().getString(R.string.currently_playing));
             cardView.setInfoAreaBackgroundColor(ContextCompat.getColor(RadioApp.getAppContext(), R.color.playing_card_color));
         }

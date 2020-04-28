@@ -11,7 +11,7 @@ import com.squareup.picasso.Picasso;
 
 public class RadioActivity extends FragmentActivity {
 
-    private Radio mSingleton;
+    private Radio mRadio;
 
     private ImageButton mPlayPause;
 
@@ -31,7 +31,7 @@ public class RadioActivity extends FragmentActivity {
         TextView radioTitle = findViewById(R.id.radio_title);
         radioTitle.setText(title);
 
-        mSingleton = Radio.getInstance(this);
+        mRadio = Radio.getInstance(this);
 
         mPlayPause = findViewById(R.id.play_pause);
 
@@ -39,7 +39,7 @@ public class RadioActivity extends FragmentActivity {
 
         mPlayPause.setOnClickListener(view -> {
             checkPlayerState(true);
-            mSingleton.playPause(streamUrl);
+            mRadio.playPause(streamUrl);
         });
 
         //Check if it's first load
@@ -49,12 +49,12 @@ public class RadioActivity extends FragmentActivity {
     }
 
     private void checkPlayerState(boolean invert) {
-        mPlayPause.setImageResource(mSingleton.isPlaying() ?
+        mPlayPause.setImageResource(mRadio.isPlaying() ?
                 (invert ? R.drawable.play : R.drawable.pause) :
                 (invert ? R.drawable.pause : R.drawable.play));
     }
 
     private boolean play(String streamUrl, String radioIcon, String title) {
-        return mSingleton.load(streamUrl, radioIcon, title, this);
+        return mRadio.load(streamUrl, radioIcon, title, this);
     }
 }

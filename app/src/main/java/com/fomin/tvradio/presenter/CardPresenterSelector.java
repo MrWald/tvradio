@@ -12,7 +12,7 @@ import com.fomin.tvradio.model.Card;
 public class CardPresenterSelector extends PresenterSelector {
 
     private final Context mContext;
-    private final HashMap<Card.Type, Presenter> presenters = new HashMap<>();
+    private final HashMap<Card.Type, Presenter> mPresenters = new HashMap<>();
     private RadioFragment mFragment;
 
     public CardPresenterSelector(Context context, RadioFragment fragment) {
@@ -26,10 +26,10 @@ public class CardPresenterSelector extends PresenterSelector {
                 String.format("The PresenterSelector only supports data items of type '%s'",
                         Card.class.getName()));
         Card card = (Card) item;
-        Presenter presenter = presenters.get(card.getType());
+        Presenter presenter = mPresenters.get(card.getType());
         if (presenter == null) {
             presenter = new ImageCardViewPresenter(mContext, mFragment);
-            presenters.put(card.getType(), presenter);
+            mPresenters.put(card.getType(), presenter);
         }
         return presenter;
     }

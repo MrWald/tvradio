@@ -29,7 +29,7 @@ public class RadioFragment extends VerticalGridSupportFragment {
     private ArrayObjectAdapter mAdapter;
 
     private int nRows;
-    private Radio mSingleton;
+    private Radio mRadio;
 
     private Cards mCards;
 
@@ -47,7 +47,7 @@ public class RadioFragment extends VerticalGridSupportFragment {
                 getTitleView().setVisibility(View.INVISIBLE);
             }
         });
-        mSingleton = Radio.getInstance(getActivity());
+        mRadio = Radio.getInstance(getActivity());
     }
 
     public int getRows(){
@@ -82,12 +82,12 @@ public class RadioFragment extends VerticalGridSupportFragment {
     @Override
     public void onResume() {
         super.onResume();
-        if (mCards != null && !mSingleton.getStreamUrl().equals("")) {
+        if (mCards != null && !mRadio.getStreamUrl().equals("")) {
 
             Card card = null;
 
             for (int i = 0; i < mCards.getCards().size(); i++) {
-                if (mSingleton.getStreamUrl().equals(mCards.getCards().get(i).getStream())) {
+                if (mRadio.getStreamUrl().equals(mCards.getCards().get(i).getStream())) {
                     card = mCards.getCards().get(i);
                 }
             }
