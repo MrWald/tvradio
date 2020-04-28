@@ -1,0 +1,31 @@
+{
+  "cards": [
+    {
+      "type": "RADIO_ITEM",
+      "title": "Nostalgie Best of 60s",
+      "localImageResource": "https://guzei.com/online_radio/logo300/5365.png",
+      "stream": "http://cdn.nrjaudio.fm/adwz1/fr/30615/mp3_128.mp3",
+      "position": 0
+    },
+    {
+      "type": "RADIO_ITEM",
+      "title": "Nostalgie Best of 70s",
+      "localImageResource": "https://guzei.com/online_radio/logo300/5366.png",
+      "stream": "http://cdn.nrjaudio.fm/adwz1/fr/30613/mp3_128.mp3",
+      "position": 1
+    },
+    {
+      "type": "RADIO_ITEM",
+      "title": "Nostalgie Best of 80s",
+      "localImageResource": "https://guzei.com/online_radio/logo300/5359.png",
+      "stream": "http://cdn.nrjaudio.fm/adwz1/fr/30605/mp3_128.mp3",
+      "position": 2
+    },
+    {
+      "type": "EXIT_ITEM",
+      "title": "Exit application",
+      "localImageResource": "exit",
+      "position": 3
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TV Radio</string>
+    <string name="grid_title">TV Radio</string>
+    <string name="currently_playing">Currently playing…</string>
+    <string name="buffering">Buffering…</string>
+    <string name="radio">The radio logo</string>
+    <string name="pause">Pause playing radio</string>
+</resources>

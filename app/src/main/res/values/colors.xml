@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_color">#F5F5F5</color>
+    <color name="title_color">#000</color>
+    <color name="card_color">#000</color>
+    <color name="playing_card_color">#7F7F7F</color>
+</resources>
